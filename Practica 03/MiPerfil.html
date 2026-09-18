@@ -1,177 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name ="description" content="Mi perfil de estudiante"> 
-    <title>Juan Fernando Hernandez Lopez @ T.S.U. en Desarrollo en Software Multiplataforma</title>
-    <link id="mi-favicon" rel="icon" href="assets/imagenes/perfil.png" type="image/png">
+
+    <meta name ="viewport"
+            content="width=device-width, initial-scale=1.0">
+    
+    <meta name ="description"
+            content="Mi perfil de estudiante"> 
+    
+    <meta name ="author"
+                content="Juan Fernando Hernandez Lopez  @ T.S.U. en Desarrollo en Software Multiplataforma">
+    <title>Mi Primera Página Web</title>
+
+    <link id="mi-favicon" 
+            rel="icon"
+            href="assets/imagenes/perfil.png" 
+         type="image/png">
+
+    <link rel="stylesheet"
+         href="css/styles.css">
+
 </head>
+
 <body>
     <!-- ================= -->
     <!--    NAVEGACIÓN     -->
     <!-- ================= -->
+     <nav id="menu"> <!-- Etiqueta de sematica con el atributo id -->
 
-    <nav id="menu"> <!-- Etiqueta de sematica con el atributo id -->
+        <h2>🚀 Mi Mundo</h2>
+
+    
         <ul> <!-- Unordered List, Lista desordenada -->
-            <li>Inicio</li>
-            <li>Acerca de mí</li>
-            <li>Aspiraciones</li>
-            <li>Hobbies</li>
-            <li>Favoritos</li>
-            <li>Redes Sociales</li>
+
+            <li class="menu_option"><a href="#inicio">Inicio</a></li>
+            <li class="menu_option"><a href="#acerca-de-mi">Acerca de mí</a></li>
+            <li class="menu_option"><a href="#aspiraciones">Aspiraciones</a></li>
+            <li class="menu_option"><a href="#hobbies">Hobbies</a></li>
+            <li class="menu_option"><a href="#favoritos">Favoritos</a></li>
+            <li class="menu_option"><a href="#redes-sociales">Redes Sociales</a></li>
+
         </ul>
-    </nav>
-
-    <!-- Acerca de Mí -->
-    <section>
-        <h2>👤 Acerca de mí</h2>
-        <div> <!-- Etiqueta de estructura que agrupa elementos -->
-            <div>
-                <p>
-                    Soy estudiante de Tecnologías de la Información
-                    y me intera aprender sibre desarrollo web
-                    programación, diseño y nuevas tecnologías
-                </p>
-
-                <p>
-                    Me gusta resolver problemas, crear cosas nuevas
-                    y desarrollar proyectos que puedan ser útiles.
-                </p>
-            </div>
-
-            <div>
-                <article>
-                    <h3>🎂 Edad </h3>
-                    <p> 20 años </p>
-                </article>
-
-                <article>
-                    <h3> 📍 Ciudad </h3>
-                    <p> Villa Ávila Camacho, Xicotepec, Puebla, La Ceiba</p>
-                </article>
-
-                <article>
-                    <h3>🎓 Ocupación</h3>
-                    <p>Estudiante</p>
-                </article>
-
-                <article>
-                    <h3>☕ Extra</h3>
-                    <p> Amo el café</p>
-                </article>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= -->
-    <!-- ASPIRACIONES -->
-    <!-- ================= -->
-     
-    <section id="aspiraciones">
-        <h2>🎯 Mis aspiraciones</h2>
-        <div>
-            
-            <article>
-                <h3>🎓 Terminar mi carrera </h3>
-                <p>
-                    Concluir mis estudios y fortalecer
-                    mis habilidades profesionales.
-                </p>
-            </article>
-
-            <article>
-                <h3>💻 Ser desarrolador</h3>
-                <p>
-                    Trabajar en proyectos de software
-                    y crear aplicaiones útiles
-                </p>
-            </article>
-
-            <article>
-                <h3>🌍 Viajar</h3>
-                <p>
-                    Conocer otras ciudades, culturas
-                    y nuevas experiencias.
-                </p>
-            </article>
-        </div>
-    </section>
-
-    <!-- ================= -->
-    <!-- HOBBIES -->
-    <!-- ================= -->
-
-    <section id="hobbies">
-
-        <h2> 🧩 Lo que disfruto hacer</h2>
-
-        <div>
-
-             <article>
-                <h3> 💻 Programar</h3>
-                <p>Crear soluciones</p>
-            </article>
-
-            <section>
-                <h3> 🎮 Videojuegos</h3>
-                <p> Explorar mundos digitales</p>
-            </section>
-
-            <section>
-                <h3>🎧 Música</h3>
-                <p>Escuchar mis canciones favoritas</p>
-            </section>
-
-            <section>
-                <h3>📷 Fotografía</h3>
-                <p> Capturar momentos</p>
-            </section>
-
-            <section>
-                <h3>✈️ Viajar</h3>
-                <p> Conocer nuevos lugares</p>
-            </section>
-
-        </div>
-    </section>
-     
-    <!-- ================= -->
-    <!-- FAVORITOS -->
-    <!-- ================= -->
-
-    <section id="favoritos">
         
-        <h2>⭐ Mis favoritos</h2>
+    </nav>
+    <!-- ================= -->
+    <!-- HERO / PARALLAX 1  -->
+    <!-- ================= -->
+    <header id="inicio"
+        class="parallax parallax-1">
 
-        <div>
-             
-            <section>
-                <h3>🎬 Pelicula favorita</h3>
-                <p> El Hombre Araña 3</p>
+    <div class="glass hero-card">
+
+        <img src="assets/imagenes/Fernando Hernandez.jpg"
+            alt="Fotografia de perfil"
+            class="perfil">
+
+        <h1>Hola, soy Juan Fernando Hernandez Lopez
+
+        <p>
+            Estudiante de Tecnologías de la Información | Apasionado por la tecnología | Soñador
+        </p>
+
+        <blockquote>
+        "La disciplina de hoy construye el éxito del mañana"
+        </blockquote>
+
+        <a href="#acerca-de-mi"
+        class="boton">
+
+        Conoceme ↓
+
+        </a>
+
+    </div>
+
+        </header>
+
+            <!-- ================= -->
+            <!-- Acerca de Mí -->
+            <!-- Colorr Sólido -->
+            <!-- ================= -->
+
+            <section id="acerca-de-mi"
+                    class="seccion solido-1"> <!-- Etiqueta de sematica con el atributo id y class -->
+
+                <h2>👤 Acerca de mí</h2>
+
+                <div class="contenedor"> <!-- Etiqueta de estructura que agrupa elementos -->
+
+                    <div class="card">
+                        <p>
+                            Soy estudiante de Tecnologías de la Información
+                            y me interesa aprender sobre el desarrollo web,
+                            programación, diseño y nuevas tecnologías
+                        </p>
+
+                        <p>
+                            Me gusta resolver problemas, crear cosas nuevas
+                            y desarrollar proyectos que puedan ser útiles.
+                        </p>
+                    </div>
+
+                    <div>
+                        <article>
+                            <h3>🎂 Edad </h3>
+                            <p> 20 años </p>
+                        </article>
+
+                        <article>
+                            <h3> 📍 Ciudad </h3>
+                            <p> Villa Ávila Camacho, Xicotepec, Puebla, La Ceiba</p>
+                        </article>
+
+                        <article>
+                            <h3>🎓 Ocupación</h3>
+                            <p>Estudiante</p>
+                        </article>
+
+                        <article>
+                            <h3>☕ Extra</h3>
+                            <p> Amo el café</p>
+                        </article>
+                    </div>
+
+                </div>
             </section>
 
-             <section>
-                <h3>🎵 Canción favorita</h3>
-                <p> Los Telez - Yo Soy Tu Maestro</p>
+            <!-- ================= -->
+            <!-- ASPIRACIONES -->
+            <!-- ================= -->
+            
+            <section id="aspiraciones">
+                <h2>🎯 Mis aspiraciones</h2>
+                <div>
+                    
+                    <article>
+                        <h3>🎓 Terminar mi carrera </h3>
+                        <p>
+                            Concluir mis estudios y fortalecer
+                            mis habilidades profesionales.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>💻 Ser desarrolador</h3>
+                        <p>
+                            Trabajar en proyectos de software
+                            y crear aplicaiones útiles
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>🌍 Viajar</h3>
+                        <p>
+                            Conocer otras ciudades, culturas
+                            y nuevas experiencias.
+                        </p>
+                    </article>
+                </div>
             </section>
 
-             <section>
-                <h3>📚 Libro Favorito</h3>
-                <p>Cien años de soledad</p>
+            <!-- ================= -->
+            <!-- HOBBIES -->
+            <!-- ================= -->
+
+            <section id="hobbies">
+
+                <h2> 🧩 Hobbies</h2>
+
+                <div>
+
+                    <article>
+                        <h3> 💻 Programar</h3>
+                        <p>Crear soluciones</p>
+                    </article>
+
+                    <section>
+                        <h3> 🎮 Videojuegos</h3>
+                        <p> Explorar mundos digitales</p>
+                    </section>
+
+                    <section>
+                        <h3>🎧 Música</h3>
+                        <p>Escuchar mis canciones favoritas</p>
+                    </section>
+
+                    <section>
+                        <h3>📷 Fotografía</h3>
+                        <p> Capturar momentos</p>
+                    </section>
+
+                    <section>
+                        <h3>✈️ Viajar</h3>
+                        <p> Conocer nuevos lugares</p>
+                    </section>
+
+                </div>
             </section>
+            
+            <!-- ================= -->
+            <!-- FAVORITOS -->
+            <!-- ================= -->
+
+            <section id="favoritos">
+                
+                <h2>⭐ Mis favoritos</h2>
+
+                <div>
+                    
+                    <section>
+                        <h3>🎬 Pelicula favorita</h3>
+                        <p> El Hombre Araña 3</p>
+                    </section>
+
+                    <section>
+                        <h3>🎵 Canción favorita</h3>
+                        <p> Los Telez - Yo Soy Tu Maestro</p>
+                    </section>
+
+                    <section>
+                        <h3>📚 Libro Favorito</h3>
+                        <p>Cien años de soledad</p>
+                    </section>
 
 
-        </div>
+                </div>
 
-    </section>
+            </section>
 
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
 
-    <section id="redes"
+    <section id="redes-sociales"
              >
 
         <h2>🛜🌐Mis redes sociales</h2>
@@ -349,7 +412,20 @@
         </div>
 
     </section>
-    
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
 
+    <footer>
+    <p>
+        Mi Primera Página Web
+    </p>
+
+    <p id="anio"></p>
+
+    <a href="#inicio"> <!-- Anchor / ANcla redireccionamiento en tu misma página -->
+        ↑ Volver al Inicio
+    </a>
+    </footer>
 </body>
 </html>

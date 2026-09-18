@@ -1,0 +1,17 @@
+/* Esto es un comentario en CSS */
+body /*Selector de componente de la página*/
+{
+    background-color: skyblue;
+}
+#acerca-de-mi 
+{
+    background-color: greenyellow;
+}
+.menu_option{
+    background-color: grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.menu_option:hover
+{
+    background-color: white;
+}
