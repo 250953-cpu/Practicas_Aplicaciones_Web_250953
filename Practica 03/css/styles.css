@@ -75,7 +75,117 @@ nav a:hover{
     background: rgba(0, 0, 0, 0.38);
 }
 /*CONTENIDO SOBRE EL FONDO*/
-.PARALLAX > * {
+.parallax > * {
     position: relative;
     z-index: 2;
 }
+/* ================ 
+== BACKGROUND HD ==
+ ================*/
+
+.parallax-1{
+    background-image: 
+    url("../assets/imagenes/image 1.jpg");
+}
+.parallax-2{
+    background-image: 
+    url("../assets/imagenes/image 2.jpg");
+}
+.parallax-3{
+    background-image: 
+    url("../assets/imagenes/image 3.jpg");
+}
+.parallax-4{
+    background-image: 
+    url("../assets/imagenes/image 4.jpg");
+}
+.perfil{
+
+    width: clamp(180px, 20vmin, 300px) ;
+    height: clamp(180px, 20vmin, 300px) ;
+
+    aspect-ratio: 1 / 1; 
+    
+    object-fit: cover;
+    
+    object-position: center top; 
+
+    border-radius: 50%;
+
+    display: block;
+
+    box-shadow: 0 10px 30px rgba(22, 248, 2, 0.6);
+}
+/* ================ 
+ == GLASS EFFECT ==
+ ================*/
+
+.glass{
+    background: 
+    rgba(20, 30, 50, 0.38);
+    color: white;
+    backdrop-filter:
+    blur(14px);
+    border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+    border-radius:
+    24px;
+    box-shadow: 
+    0 25px 50px
+    rgba(0, 0, 0, 0.25);
+
+}
+/* ================ 
+ ====== HERO ======
+ ================*/
+
+ .hero-card{
+    max-width: 900px;
+    padding: 45px;
+     display: flex;
+    flex-direction: row;      
+    align-items: center;      
+    justify-content: center;  
+    gap: 40px;              
+    text-align: center;
+ }
+ .hero-card h1{
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+.hero-card p{
+    font-size: 1.2rem;
+}
+blockquote{
+    margin: 25px auto;
+    max-width: 500px;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+/* ================ 
+ ===== BUTTON =====
+ ================*/
+ .boton{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 
+    14px 30px;
+    background: 
+    rgba(255, 255, 255, 0.9);
+    color: #111827;
+    border-radius: 
+    30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+ }
+ .boton:hover {
+    transform:
+    translateY(-4px);
+    box-shadow:
+    0 12px 25px
+    rgba(0, 0, 0, 0.25);
+    background-color: rgb(34, 238, 228);
+    color: rgb(0, 0, 0);
+ }
