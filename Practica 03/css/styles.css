@@ -6,7 +6,7 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+body{/* Cuerpo del documento */
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background: #0f172a ;
@@ -17,7 +17,7 @@ body{
     border-width: 15px;
     padding: 50px;*/
 }
-nav{
+nav{/* Posición de la Barra de navegación*/
     position: fixed;
     top: 0;
     left: 0;
@@ -32,21 +32,21 @@ nav{
     z-index: 1000;
     transition: 0.3s;
 }
-nav h2{
+nav h2{/* Encabezado del menú mi mundo para cambiar colores*/
     color: white;
 }
-nav ul{
+nav ul{/* Separación de las opciones del menú*/
     list-style: none;
     display: flex;
     gap: 25px;
 }
-nav a{
+nav a{/* Color de los opciones del menú*/
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
-nav a:hover{
+nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
     color: #67e8f9
 }
 
@@ -101,16 +101,16 @@ nav a:hover{
 }
 .perfil{
 
-    width: clamp(180px, 20vmin, 300px) ;
-    height: clamp(180px, 20vmin, 300px) ;
+    width: clamp(250px, 25vmin, 300px) ;
+    height: clamp(250px, 25vmin, 300px) ;
 
     aspect-ratio: 1 / 1; 
     
     object-fit: cover;
     
-    object-position: center top; 
+    object-position:  50% 13%; 
 
-    border-radius: 50%;
+    border-radius: 50% ;
 
     display: block;
 
@@ -143,20 +143,36 @@ nav a:hover{
  .hero-card{
     max-width: 900px;
     padding: 45px;
-     display: flex;
+    display: flex;
     flex-direction: row;      
     align-items: center;      
     justify-content: center;  
     gap: 40px;              
     text-align: center;
  }
- .hero-card h1{
+ 
+ /* Organiza de forma vertical el título, subtítulo, frase y botón */
+.hero-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centra los textos horizontalmente en su propia columna */
+    gap: 15px;                /* Separación uniforme entre los textos */
+    text-align: center;
+}
+
+ .hero-card h1 {
     font-size: 3rem;
-    margin-bottom: 8px;
+    margin: 0;                /* Resetea márgenes para evitar desfases */
+    color: white;
+    font-weight: bold;
 }
-.hero-card p{
+
+.hero-card p {
     font-size: 1.2rem;
+    margin: 0;                /* Resetea márgenes para evitar desfases */
+    color: #cbd5e1;           /* Color de texto claro y legible */
 }
+
 blockquote{
     margin: 25px auto;
     max-width: 500px;
