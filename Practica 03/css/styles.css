@@ -114,7 +114,7 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
 
     display: block;
 
-    box-shadow: 0 10px 30px rgba(22, 248, 2, 0.6);
+    box-shadow: 0 10px 30px rgba(59, 248, 255, 0.6);
 }
 /* ================ 
  == GLASS EFFECT ==
@@ -204,4 +204,75 @@ blockquote{
     rgba(0, 0, 0, 0.25);
     background-color: rgb(34, 238, 228);
     color: rgb(0, 0, 0);
+ }
+ /* ================ 
+ == SECCIONES ==
+ ================*/
+ .seccion{
+    min-height: 40vh;
+    padding: 40px 8%;
+ }
+ .seccion h2{
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 45px;
+ }
+ /* ================ 
+ == COLORES SÓLIDOS ALTERNADOS ==
+ ================*/
+ .solido-1 {
+    background: #f8fafc;
+ }
+ .solido-2 {
+    background: #111827;
+    color: white;
+ }
+ .solido-3 {
+    background: #e0f2fe;
+ }
+ .solido-4 {
+    background: #1e293b;
+    color: white;
+ }
+ .redes{
+    background: #f1f5f9;
+}
+ 
+ /* ================ 
+ == CONTENEDORES ==
+ ================*/
+ .contenedor{
+    min-width: 1100px;
+    margin: auto;
+ }
+ .card{
+    background: rgba(255, 255, 255, 0.88);
+    color: #222;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+ }
+ .card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+ }
+ /* ================ 
+ == DATOS PERSONALES ==
+ ================*/
+
+ .datos{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+ }
+ .datos article{
+    margin-top: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    
  }
