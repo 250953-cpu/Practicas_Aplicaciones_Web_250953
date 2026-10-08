@@ -1,5 +1,4 @@
 /* Configuración General De La Página Web*/
-
 *{
     box-sizing: border-box;
 }
@@ -17,6 +16,10 @@ body{/* Cuerpo del documento */
     border-width: 15px;
     padding: 50px;*/
 }
+/* ============================= */
+/* NAVEGACIÓN */
+/* ============================= */
+
 nav{/* Posición de la Barra de navegación*/
     position: fixed;
     top: 0;
@@ -54,7 +57,7 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
  PARALLAX GENERAL
  ================ */
 .parallax{
-    min-height: 80vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
@@ -109,41 +112,17 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
     background-image: 
     url("../assets/imagenes/image 4.jpg");
 }
-.perfil{
-
-    width: clamp(250px, 25vmin, 300px) ;
-    height: clamp(250px, 25vmin, 300px) ;
-
-    aspect-ratio: 1 / 1; 
-    
-    object-fit: cover;
-    
-    object-position:  50% 13%; 
-
-    border-radius: 50% ;
-
-    display: block;
-
-    box-shadow: 0 10px 30px rgba(59, 248, 255, 0.6);
-}
 /* ================ 
  == GLASS EFFECT ==
  ================*/
 
 .glass{
-    background: 
-    rgba(20, 30, 50, 0.38);
+    background: rgba(20, 30, 50, 0.38);
     color: white;
-    backdrop-filter:
-    blur(14px);
-    border:
-    1px solid
-    rgba(255, 255, 255, 0.25);
-    border-radius:
-    24px;
-    box-shadow: 
-    0 25px 50px
-    rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 
 }
 /* ================ 
@@ -151,28 +130,53 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
  ================*/
 
  .hero-card{
-    max-width: 900px;
+    max-width: 700px;
     padding: 45px;
-    display: flex;
+    text-align: center;
+   /* Cambia la dirección
+   de los elementos dentro
+   del contenedor a una fila horizontal*/
+   display: flex;
     flex-direction: row;      
     align-items: center;      
     justify-content: center;  
-    gap: 40px;              
-    text-align: center;
+    gap: 40px;            
  }
- 
+ .perfil{
+
+    width: clamp(250px, 25vmin, 300px) ;
+    
+    height: clamp(250px, 25vmin, 300px) ;
+    
+    object-fit: cover;
+
+    border-radius: 50% ;
+
+    border: 5px solid white;
+    /*Agrega la sombra a la imagen de perfil*/
+    box-shadow: 0 10px 30px rgba(59, 248, 255, 0.6);
+    /*Ajusta la relación de aspecto de la imagen
+    para que sea cuadrada y se centre correctamente*/
+    aspect-ratio: 1 / 1; 
+    
+    object-position:  50% 13%; 
+
+    display: block;
+
+}
+
  /* Organiza de forma vertical el título, subtítulo, frase y botón */
 .hero-card-info {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* Centra los textos horizontalmente en su propia columna */
-    gap: 15px;                /* Separación uniforme entre los textos */
+    align-items: center;/* Centra los textos horizontalmente en su propia columna */
+    gap: 15px;/* Separación uniforme entre los textos */
     text-align: center;
 }
 
  .hero-card h1 {
     font-size: 3rem;
-    margin: 0;                /* Resetea márgenes para evitar desfases */
+    margin-bottom: 8px;/* Resetea márgenes para evitar desfases */
     color: white;
     font-weight: bold;
 }
@@ -195,13 +199,10 @@ blockquote{
  .boton{
     display: inline-block;
     margin-top: 15px;
-    padding: 
-    14px 30px;
-    background: 
-    rgba(255, 255, 255, 0.9);
+    padding: 14px 30px;
+    background: rgba(255, 255, 255, 0.9);
     color: #111827;
-    border-radius: 
-    30px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -209,18 +210,16 @@ blockquote{
  .boton:hover {
     transform:
     translateY(-4px);
-    box-shadow:
-    0 12px 25px
-    rgba(0, 0, 0, 0.25);
-    background-color: rgb(34, 238, 228);
-    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    background-color: rgb(34, 238, 228);/* Cambia el color a azul turquesa del fondo al pasar el mouse */
+    color: rgb(0, 0, 0);/* Cambia el color del texto a negro al pasar el mouse */
  }
  /* ================ 
  == SECCIONES ==
  ================*/
  .seccion{
-    min-height: 40vh;
-    padding: 40px 8%;
+    min-height: 80vh;
+    padding: 100px 8%;
  }
  .seccion h2{
     text-align: center;
@@ -265,7 +264,7 @@ blockquote{
  }
  .card:hover{
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
  }
  /* ================ 
  == DATOS PERSONALES ==
@@ -279,7 +278,8 @@ blockquote{
 
  }
  .datos article{
-    margin-top: 30px;
+    margin-top: 30px;  /* ↕️ Empuja el cuadro hacia abajo (espacio exterior) */
+    padding: 20px;     /* ↩️ Esponja el cuadro por dentro (espacio interior) */
     text-align: center;
     background: white;
     border-radius: 18px;
@@ -295,15 +295,37 @@ blockquote{
     gap: 25px;
     max-width: 1200px;
     margin: auto;
+}
+.cinco {
+    grid-template-columns: repeat(5, 1fr);
  }
  /* ================ 
  == IMAGENES ==
  ================*/
 .card img{
     width: 100%;
-    max-height: 200px;
+    max-height: 280px;
     object-fit: cover;
     border-radius: 15px;
+}
+/* ============================= */
+/* FRASES PARALLAX */
+/* ============================= */
+
+.frase {
+    max-width: 750px;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+.frase h2 {
+    font-size: 2.5rem;
+}
+
+.frase p {
+    font-size: 1.3rem;
 }
 
  /* ================ 
@@ -338,8 +360,66 @@ blockquote{
     background: linear-gradient(145deg, #2563eb, #7c3aed);
  }
  .redes-sociales svg{
-    width: 36;
+    width: 36px;
+    height: 36px;
  }
- /* ================ 
- ==  ==
- ================*/
+ /* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        #020617;
+
+    color: white;
+}
+
+footer a {
+    color:
+        #67e8f9;
+
+    text-decoration: none;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    .grid,
+    .cinco,
+    .datos {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .grid,
+    .cinco,
+    .datos {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero-card h1 {
+        font-size: 2rem;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+ 
