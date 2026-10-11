@@ -9,7 +9,7 @@ body{/* Cuerpo del documento */
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background: #0f172a ;
-    color: #CCC;
+    color: #222;
     line-height: 1.6;/*Espaciado entre líneas de texto*/
     /*border-color: red;
     border-style: solid;
@@ -25,7 +25,7 @@ nav{/* Posición de la Barra de navegación*/
     top: 0;
     left: 0;
     width: 100%;
-    padding: 14px 3%;/* Espaciado interno de la barra de navegación */
+    padding: 0px 2%;/* Espaciado interno de la barra de navegación */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,19 +98,20 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
 
 .parallax-1{
     background-image: 
-    url("../assets/imagenes/image 1.jpg");
+    url("../assets/imagenes/PortadaInicio.png");
+    
 }
 .parallax-2{
     background-image: 
-    url("../assets/imagenes/image 2.jpg");
+    url("../assets/imagenes/PortadaAspiraciones.png");
 }
 .parallax-3{
     background-image: 
-    url("../assets/imagenes/image 3.jpg");
+    url("../assets/imagenes/PortadaHobbies.png");
 }
 .parallax-4{
     background-image: 
-    url("../assets/imagenes/image 4.jpg");
+    url("../assets/imagenes/PortadaFavoritos.png");
 }
 .perfil{
 
@@ -158,8 +159,8 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
 
  .hero-card{
     width: 75%;
-    max-width: 900px;
-    padding: 28px 35px;/*Mucho menos espacio interno*/
+    max-width: 750px;
+    padding: 20px 35px;/*Mucho menos espacio interno*/
     text-align: left;
     /* Cambia la dirección
     de los elementos dentro
