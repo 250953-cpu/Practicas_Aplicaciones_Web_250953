@@ -195,19 +195,17 @@ nav a:hover{/* Color de las opciones del menú al pasar el mouse*/
 }
 .hero-contenido blockquote {
     max-width: 550px;
-    /*importante: elimina el auto anterior*/
     margin: 18px 0;
     border-left: 4px solid white;
-    padding: 6px 0 6px 18px;/* Espaciado interno
-    para que el texto no toque la línea */
-    font-size: 1.1rem;/* Tamaño de fuente ligeramente más grande */
-    font-style: italic;/* Estilo de fuente en cursiva */
-    line-height: 1.5;/* Espaciado entre líneas de texto */
+    padding: 6px 0 6px 18px;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.5;
 /*.hero-card p {
     font-size: 1.2rem;
-    margin: 0;*/                /* Resetea márgenes para evitar desfases */
-   /* color: #cbd5e1;  */         /* Color de texto claro y legible */
-/*}*/
+    margin: 0;
+    color: #cbd5e1;
+}*/
 
 /*blockquote{
     margin: 25px auto;
@@ -409,6 +407,211 @@ footer a {
         #67e8f9;
 
     text-decoration: none;
+}
+/* ==========================================
+   SECCIÓN: CARRUSEL
+   ========================================== */
+
+.favoritos-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: -20px auto 30px;
+  color: #cbd5e1;
+}
+
+.carrusel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 850px;
+  margin: auto;
+  /* border: 5px solid magenta; */ /* Notación corta de un borde */
+}
+
+.carrusel-ventana {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  border-radius: 22px;
+  /* border: 5px solid magenta; */
+}
+
+.carrusel-pista { /* Track */
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+/* --- Tarjetas del carrusel --- */
+
+.favorito-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  min-height: 310px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #475569;
+  border-radius: 22px;
+  background: #293b55;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.favorito-card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.favorito-icono {
+  font-size: 6rem;
+  line-height: 1;
+  padding: 55px 0;
+}
+
+.favorito-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+}
+
+.favorito-info strong {
+  font-size: 1.25rem;
+}
+
+.favorito-info small {
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+/* --- Botones de navegación (Flechas) --- */
+
+.carrusel-flecha {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #64748b;
+  border-radius: 50%;
+  background: #334155;
+  color: #fff;
+}
+
+.carrusel-flecha:hover {
+  background: #2563eb;
+}
+
+/* --- Indicadores inferiores --- */
+
+.carrusel-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.carrusel-indicadores button {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #94a3b8;
+  cursor: pointer;
+}
+
+.carrusel-indicadores button.activo {
+  background: #38bdf8;
+  transform: scale(1.25);
+}
+
+
+/* ==========================================
+   SECCIÓN: MODAL BLOQUEANTE
+   ========================================== */
+
+body.modal-abierto {
+  overflow: hidden;
+}
+
+.modal-favoritos[hidden] {
+  display: none;
+}
+
+.modal-favoritos {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: stretch;
+  background: rgba(2, 6, 23, 0.96);
+}
+
+.modal-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  border: 1px solid #475569;
+  border-radius: 16px;
+}
+
+.modal-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #475569;
+}
+
+.modal-cabecera h2 {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: #fff;
+}
+
+.modal-cerrar {
+  padding: 4px 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 10px;
+  background: #334155;
+  color: #fff;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+/* --- Contenido del Modal --- */
+
+.modal-contenido {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  overflow: auto;
+}
+
+.modal-contenido video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  border-radius: 8px;
+}
+
+.modal-contenido audio {
+  width: min(90%, 600px);
+}
+
+.modal-contenido iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+  border: 0;
+  background: #fff;
 }
 /* Ajustes de contraste y acesibilidad */
 

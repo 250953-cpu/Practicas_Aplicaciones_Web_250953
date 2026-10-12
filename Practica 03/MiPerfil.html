@@ -48,39 +48,26 @@
     <!-- ================= -->
     <!-- HERO / PARALLAX 1  -->
     <!-- ================= -->
-    <header id="inicio"
-        class="parallax parallax-1">
+    <header id="inicio" 
 
-    <div class="glass hero-card">
-
-        <img src="assets/imagenes/Fernando Hernandez.jpg"
-            alt="Fotografia de perfil"
-            class="perfil">
-            
-            <!-- LADO DERECHO: Contenedor con la información ordenada -->
-            <div class="hero-card-info">
-
-        <h1>Hola👋, Soy Fernando</h1>
-
-        <p>
-            Estudiante de Tecnologías de la Información | Apasionado por la tecnología | Soñador
-        </p>
-
-        <blockquote>
-        "La disciplina de hoy construye el éxito del mañana"
-        </blockquote>
-
-        <a href="#acerca-de-mi"
-        class="boton">
-
-        Conoceme ↓
-
-        </a>
-
-    </div>
-
-        </header>
-
+    class="parallax parallax-1">
+            <div class="glass hero-card">
+                <img src="assets/imagenes/Fernando Hernandez.jpg"
+                alt="Fotografia de perfil" class="perfil">
+                <div class="hero-card-info">
+                    <h1>Hola👋, Soy Fernando</h1>
+                    
+                    <p>Estudiante de Tecnologías de la Información | 
+                        Apasionado por la tecnología | Soñador
+                    </p>
+                    <blockquote>"La disciplina de hoy construye
+                        el éxito del mañana"
+                    </blockquote>
+                    <a href="#acerca-de-mi" 
+                    class="boton">Conoceme ↓</a>
+                </div>
+            </div>
+        </header> 
             <!-- ================= -->
             <!-- Acerca de Mí -->
             <!-- Color Sólido -->
@@ -244,50 +231,78 @@
             <!-- ================= -->
             <!-- FAVORITOS -->
             <!-- COLOR SÓLIDO -->
+             <!-- FAVORITOS CARRUSEL -->
             <!-- ================= -->
 
-            <section id="favoritos" 
-            class="seccion solido-4">
+<section id="favoritos" class="seccion solido-4">
+  <h2>⭐ Mis favoritos</h2>
+  <p class="favoritos-intro">
+    Descubre mis historias y canciones favoritas. Selecciona una tarjeta para explorar su contenido.
+  </p>
 
-                <h2>⭐ Mis favoritos</h2>
+  <div class="carrusel" aria-label="Carrusel de favoritos">
+    <button class="carrusel-flecha" id="anterior" type="button" aria-label="Favorito anterior">
+      &#10094;
+    </button>
 
-                <div class="grid">
-                    
-                    <article class="card">
-                        <h3>🎬 Pelicula favorita</h3>
-                        <img src="assets/imagenes/pelicula.jpg"
-                        alt="Película favorita">
+    <div class="carrusel-ventana">
+      <div class="carrusel-pista" id="pista">
 
-                        
-                        <p> El Hombre Araña 3</p>
-                    </article>
+        <!-- Tarjeta 1: Película -->
+        <button 
+          class="favorito-card" 
+          type="button" 
+          data-tipo="video" 
+          data-src="assets/video/IntensaMente 2 _ Trailer.mp4" 
+          data-titulo="🎬 Mi película favorita: Intensamente 2"
+        >
+          <img src="assets/imagenes/pelicula.png" alt="Portada de Intensamente 2" loading="lazy">
+          <span class="favorito-info">
+            <strong>🎬 Intensamente 2</strong>
+            <small>Ver tráiler MP4</small>
+          </span>
+        </button>
 
-                    <article class="card">
-                        <h3>🎵 Canción favorita</h3>
-                        <img src="assets/imagenes/cancion.jpg"
-                        alt="Canción favorita">
-                        <p> Los Telez - Yo Soy Tu Maestro</p>
+        <!-- Tarjeta 2: Canción -->
+        <button 
+          class="favorito-card" 
+          type="button" 
+          data-tipo="audio" 
+          data-src="assets/audio/Yo Soy Tu Maestro.mp3" 
+          data-titulo="🎵 Mi canción favorita: Yo Soy Tu Maestro - Los Telez"
+        >
+          <img src="assets/imagenes/cancion.jpg" alt="Portada de Yo Soy Tu Maestro" loading="lazy">
+          <span class="favorito-info">
+            <strong>🎵 Yo Soy Tu Maestro</strong>
+            <small>Los Telez (Escuchar MP3)</small>
+          </span>
+        </button>
 
-                        <audio controls>
-                            <source src="assets/audio/Yo Soy Tu Maestro.mp3"
-                            type="audio/mpeg">
-                        </audio>
+        <!-- Tarjeta 3: Libro -->
+        <button 
+          class="favorito-card" 
+          type="button" 
+          data-tipo="pdf" 
+          data-src="assets/libro/el_principito.pdf" 
+          data-titulo="📖 Mi libro favorito: El Principito"
+        >
+          <img src="assets/imagenes/libro.jpg" alt="Portada de El Principito" loading="lazy">
+          <span class="favorito-info">
+            <strong>📖 El Principito</strong>
+            <small>Leer capítulo PDF</small>
+          </span>
+        </button>
 
+      </div>
+    </div>
 
-                    </article>
+    <button class="carrusel-flecha" id="siguiente" type="button" aria-label="Siguiente favorito">
+      &#10095;
+    </button>
+  </div>
 
-                    <article class="card">
-                        <h3>📚 Libro Favorito</h3>
-                        <img src="assets/imagenes/libro.jpg"
-                        alt="Libro favorito">
-                        <p>El principito</p>
-                    </article>
-
-
-                </div>
-
-            </section>
-
+  <div class="carrusel-indicadores" id="indicadores" aria-label="Seleccionar favorito"></div>
+</section>
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
@@ -474,9 +489,19 @@
         ↑ Volver al Inicio
     </a>
     </footer>
+    
+    <div id="modal-favoritos" class="modal-favoritos" hidden>
+        <div class="modal-panel">
+            <div class="modal-cabecera">
+                <h2 id="modal-titulo"></h2>
+                <button id="cerrar-modal" class="modal-cerrar" type="button" aria-label="Cerrar modal">&times;</button>
+            </div>
+            <div id="modal-contenido" class="modal-contenido"></div>
+        </div>
+    </div>
 
 <!-- Vinculación del script JavaScript -->
-    <script src="js/app.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
