@@ -1,10 +1,13 @@
-// Carrusel y modal multimedia: JavaScript básico, sin librerías.
+// ==========================================================================
+// CARRUSEL Y MODAL MULTIMEDIA: JAVASCRIPT BÁSICO, SIN LIBRERÍAS
+// ==========================================================================
+
 const tarjetas = [...document.querySelectorAll('.favorito-card')];
 const pista = document.getElementById('pista');
 const indicadores = document.getElementById('indicadores');
 let indice = 0;
 
-// Crear puntos dinámicos
+// --- CREAR PUNTOS DINÁMICOS DEL CARRUSEL ---
 if (indicadores) {
     tarjetas.forEach((tarjeta, i) => {
         const punto = document.createElement('button');
@@ -15,12 +18,13 @@ if (indicadores) {
     });
 }
 
+// --- FUNCIÓN PARA MOSTRAR LAS TARJETAS ---
 function mostrar(n) {
     if (!pista || tarjetas.length === 0) return;
     
     indice = (n + tarjetas.length) % tarjetas.length;
     pista.style.transform = `translateX(-${indice * 100}%)`;
-
+    
     if (indicadores) {
         [...indicadores.children].forEach((punto, i) => {
             punto.classList.toggle('activo', i === indice);
@@ -29,6 +33,7 @@ function mostrar(n) {
     }
 }
 
+// --- EVENTOS DE LAS FLECHAS DE NAVEGACIÓN ---
 const btnAnterior = document.getElementById('anterior');
 const btnSiguiente = document.getElementById('siguiente');
 
@@ -38,22 +43,28 @@ if (btnSiguiente) btnSiguiente.addEventListener('click', () => mostrar(indice + 
 // Iniciar carrusel en la primera posición
 mostrar(0);
 
-// Lógica del Modal Multimedia
+
+// ==========================================================================
+// LÓGICA DEL MODAL MULTIMEDIA
+// ==========================================================================
+
 const modal = document.getElementById('modal-favoritos');
 const contenido = document.getElementById('modal-contenido');
 const titulo = document.getElementById('modal-titulo');
 const cerrar = document.getElementById('cerrar-modal');
 let focoAnterior = null;
 
+// --- FUNCIÓN PARA ABRIR EL MODAL ---
 function abrir(tarjeta) {
     if (!modal || !contenido || !titulo) return;
-
+    
     focoAnterior = document.activeElement;
     titulo.textContent = tarjeta.dataset.titulo;
+    
     const tipo = tarjeta.dataset.tipo;
     const src = tarjeta.dataset.src;
     let visor;
-
+    
     if (tipo === 'video') {
         visor = document.createElement('video');
         visor.controls = true;
@@ -67,24 +78,28 @@ function abrir(tarjeta) {
         visor = document.createElement('iframe');
         visor.title = 'Vista previa del capítulo PDF';
     }
-
+    
     visor.src = src;
     contenido.replaceChildren(visor);
     modal.hidden = false;
     document.body.classList.add('modal-abierto');
+    
     if (cerrar) cerrar.focus();
 }
 
+// --- FUNCIÓN PARA CERRAR EL MODAL ---
 function cerrarModal() {
     if (!modal || !contenido) return;
-
+    
     contenido.querySelectorAll('video, audio').forEach(media => media.pause());
     contenido.replaceChildren();
     modal.hidden = true;
     document.body.classList.remove('modal-abierto');
+    
     if (focoAnterior) focoAnterior.focus();
 }
 
+// --- ASIGNACIÓN DE EVENTOS AL MODAL ---
 tarjetas.forEach(tarjeta => tarjeta.addEventListener('click', () => abrir(tarjeta)));
 
 if (cerrar) cerrar.addEventListener('click', cerrarModal);
@@ -100,7 +115,11 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') cerrarModal();
 });
 
-// Año dinámico en el footer
+
+// ==========================================================================
+// AÑO DINÁMICO EN EL FOOTER
+// ==========================================================================
+
 const anio = document.getElementById('anio');
 if (anio) {
     anio.textContent = `© ${new Date().getFullYear()} - Mi primera página web`;

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name ="viewport"
             content="width=device-width, initial-scale=1.0">
     
@@ -13,35 +11,28 @@
     <meta name ="author"
                 content="Juan Fernando Hernandez Lopez  @ T.S.U. en Desarrollo en Software Multiplataforma">
     <title>Mi Primera Página Web</title>
-
+    <!-- Se deja listo para que pongas tu imagen de icono real aquí -->
     <link id="mi-favicon" 
             rel="icon"
-            href="assets/imagenes/perfil.png" 
+            href="Practica 03/assets/imagenes/favicon.png" 
          type="image/png">
-
     <link rel="stylesheet"
-         href="css/styles.css">
-
+         href="Practica 03/css/styles.css">
 </head>
-
 <body>
     <!-- ================= -->
     <!--    NAVEGACIÓN     -->
     <!-- ================= -->
      <nav id="menu"> <!-- Etiqueta de sematica con el atributo id -->
-
         <h2>🚀 Mi Mundo</h2>
-
     
         <ul> <!-- Unordered List, Lista desordenada -->
-
             <li class="menu_option"><a href="#inicio">Inicio</a></li>
             <li class="menu_option"><a href="#acerca-de-mi">Acerca de mí</a></li>
             <li class="menu_option"><a href="#aspiraciones">Aspiraciones</a></li>
             <li class="menu_option"><a href="#hobbies">Hobbies</a></li>
             <li class="menu_option"><a href="#favoritos">Favoritos</a></li>
             <li class="menu_option"><a href="#redes-sociales">Redes Sociales</a></li>
-
         </ul>
         
     </nav>
@@ -49,10 +40,9 @@
     <!-- HERO / PARALLAX 1  -->
     <!-- ================= -->
     <header id="inicio" 
-
     class="parallax parallax-1">
             <div class="glass hero-card">
-                <img src="assets/imagenes/Fernando Hernandez.jpg"
+                <img src="Practica 03/assets/imagenes/Fernando Hernandez.jpg"
                 alt="Fotografia de perfil" class="perfil">
                 <div class="hero-card-info">
                     <h1>Hola👋, Soy Fernando</h1>
@@ -72,49 +62,39 @@
             <!-- Acerca de Mí -->
             <!-- Color Sólido -->
             <!-- ================= -->
-
             <section id="acerca-de-mi"
                     class="seccion solido-1"> <!-- Etiqueta de sematica con el atributo id y class -->
-
                 <h2>👤 Acerca de mí</h2>
-
                 <div class="contenedor"> <!-- Etiqueta de estructura que agrupa elementos -->
-
                     <div class="card">
                         <p>
                             Soy estudiante de Tecnologías de la Información
                             y me interesa aprender sobre el desarrollo web,
                             programación, diseño y nuevas tecnologías
                         </p>
-
                         <p>
                             Me gusta resolver problemas, crear cosas nuevas
                             y desarrollar proyectos que puedan ser útiles.
                         </p>
                     </div>
-
                     <div class="datos">
                         <article>
                             <h3>🎂 Edad </h3>
                             <p> 20 años </p>
                         </article>
-
                         <article>
                             <h3> 📍 Ciudad </h3>
                             <p> Villa Ávila Camacho, Xicotepec, Puebla, La Ceiba</p>
                         </article>
-
                         <article>
                             <h3>🎓 Ocupación</h3>
                             <p>Estudiante</p>
                         </article>
-
                         <article>
                             <h3>☕ Extra</h3>
                             <p> Amo el café</p>
                         </article>
                     </div>
-
                 </div>
             </section>
             <!-- ================= -->
@@ -126,12 +106,10 @@
                 </div>
              </section>
             
-
             <!-- ============================= -->
             <!-- ASPIRACIONES -->
             <!-- COLOR SÓLIDO -->
             <!-- ============================= -->
-
             
             <section id="aspiraciones"
             class = "seccion solido-2">
@@ -145,7 +123,6 @@
                             mis habilidades profesionales.
                         </p>
                     </article>
-
                     <article class="card">
                         <h3>💻 Ser desarrollador</h3>
                         <p>
@@ -153,7 +130,6 @@
                             y crear aplicaiones útiles
                         </p>
                     </article>
-
                     <article class="card">
                         <h3>🌍 Viajar</h3>
                         <p>
@@ -173,47 +149,36 @@
                         Programar, escuchar música, jugar,aprender 
                         y conocer nuevos lugares.
                     </p>
-
                 </div>
              </section>
-
             <!-- ============================= -->
             <!-- HOBBIES -->
             <!-- COLOR SÓLIDO -->
             <!-- ============================= -->
-
             <section id="hobbies"
             class="seccion solido-3">
-
                 <h2>🧩 Lo que disfruto hacer</h2>
-
                 <div class="grid cinco">
-
                     <article class="card">
                         <h3> 💻 Programar</h3>
                         <p>Crear soluciones</p>
                     </article>
-
                     <article class="card">
                         <h3> 🎮 Videojuegos</h3>
                         <p> Explorar mundos digitales</p>
                     </article>
-
                     <article class="card">
                         <h3>🎧 Música</h3>
                         <p>Escuchar mis canciones favoritas</p>
                     </article>
-
                     <article class="card">
                         <h3>📷 Fotografía</h3>
                         <p> Capturar momentos</p>
                     </article>
-
                     <article class="card">
                         <h3>✈️ Viajar</h3>
                         <p> Conocer nuevos lugares</p>
                     </article>
-
                 </div>
             </section>
              <!-- ================= -->
@@ -233,76 +198,39 @@
             <!-- COLOR SÓLIDO -->
              <!-- FAVORITOS CARRUSEL -->
             <!-- ================= -->
-
 <section id="favoritos" class="seccion solido-4">
-  <h2>⭐ Mis favoritos</h2>
+  <h2>Mis favoritos</h2>
   <p class="favoritos-intro">
     Descubre mis historias y canciones favoritas. Selecciona una tarjeta para explorar su contenido.
   </p>
-
-  <div class="carrusel" aria-label="Carrusel de favoritos">
-    <button class="carrusel-flecha" id="anterior" type="button" aria-label="Favorito anterior">
-      &#10094;
-    </button>
-
+  <div class="carrusel" aria-label="Carrusel de Favoritos">
+    <button class="carrusel-flecha" id="anterior" type="button" aria-label="Favorito Anterior">&#10094;</button>
+    
     <div class="carrusel-ventana">
       <div class="carrusel-pista" id="pista">
-
-        <!-- Tarjeta 1: Película -->
-        <button 
-          class="favorito-card" 
-          type="button" 
-          data-tipo="video" 
-          data-src="assets/video/IntensaMente 2 _ Trailer.mp4" 
-          data-titulo="🎬 Mi película favorita: Intensamente 2"
-        >
-          <img src="assets/imagenes/pelicula.png" alt="Portada de Intensamente 2" loading="lazy">
-          <span class="favorito-info">
-            <strong>🎬 Intensamente 2</strong>
-            <small>Ver tráiler MP4</small>
-          </span>
+        <!-- Tarjeta 1: Película (Ruta corregida en data-src) -->
+        <button class="favorito-card" type="button" data-tipo="video" data-src="Practica 03/assets/video/IntensaMente 2 _ Trailer.mp4" data-titulo="🎬 Mi película favorita: Intensamente 2">
+          <img src="Practica 03/assets/imagenes/pelicula.png" alt="Portada de Intensamente 2" loading="lazy">
+          <span class="favorito-info"><strong>Intensamente 2</strong><small>ver trailer MP4</small></span>
         </button>
-
-        <!-- Tarjeta 2: Canción -->
-        <button 
-          class="favorito-card" 
-          type="button" 
-          data-tipo="audio" 
-          data-src="assets/audio/Yo Soy Tu Maestro.mp3" 
-          data-titulo="🎵 Mi canción favorita: Yo Soy Tu Maestro - Los Telez"
-        >
-          <img src="assets/imagenes/cancion.jpg" alt="Portada de Yo Soy Tu Maestro" loading="lazy">
-          <span class="favorito-info">
-            <strong>🎵 Yo Soy Tu Maestro</strong>
-            <small>Los Telez (Escuchar MP3)</small>
-          </span>
+        <!-- Tarjeta 2: Canción (Ruta corregida en data-src) -->
+        <button class="favorito-card" type="button" data-tipo="audio" data-src="Practica 03/assets/audio/Yo Soy Tu Maestro.mp3" data-titulo="🎵 Mi canción favorita: Yo Soy Tu Maestro - Los Telez">
+          <img src="Practica 03/assets/imagenes/cancion.jpg" alt="Portada de Yo Soy Tu Maestro" loading="lazy">
+          <span class="favorito-info"><strong>Yo Soy Tu Maestro - Los Telez</strong><small>Escuchar MP3</small></span>
         </button>
-
-        <!-- Tarjeta 3: Libro -->
-        <button 
-          class="favorito-card" 
-          type="button" 
-          data-tipo="pdf" 
-          data-src="assets/libro/el_principito.pdf" 
-          data-titulo="📖 Mi libro favorito: El Principito"
-        >
-          <img src="assets/imagenes/libro.jpg" alt="Portada de El Principito" loading="lazy">
-          <span class="favorito-info">
-            <strong>📖 El Principito</strong>
-            <small>Leer capítulo PDF</small>
-          </span>
+        <!-- Tarjeta 3: Libro (Ruta corregida en data-src) -->
+        <button class="favorito-card" type="button" data-tipo="pdf" data-src="Practica 03/assets/libro/el_principito.pdf" data-titulo="📖 Mi libro favorito: El Principito">
+          <img src="Practica 03/assets/imagenes/libro.jpg" alt="Portada de El Principito" loading="lazy">
+          <span class="favorito-info"><strong>El Principito</strong><small>Leer capitulo PDF</small></span>
         </button>
-
       </div>
     </div>
-
-    <button class="carrusel-flecha" id="siguiente" type="button" aria-label="Siguiente favorito">
-      &#10095;
-    </button>
+    <button class="carrusel-flecha" id="siguiente" type="button" aria-label="Favorito Siguiente">&#10095;</button>
   </div>
-
+    <!-- Cambia 'indicators' por 'indicadores' para que coincida con tu CSS -->
   <div class="carrusel-indicadores" id="indicadores" aria-label="Seleccionar favorito"></div>
 </section>
+
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
@@ -501,7 +429,7 @@
     </div>
 
 <!-- Vinculación del script JavaScript -->
-    <script src="script.js"></script>
+    <script src="Practica 03/script.js"></script>
 
 </body>
 </html>
