@@ -1,0 +1,23 @@
+{
+  "name": "practicas_aplicaciones_web_250953",
+  "version": "1.0.0",
+  "description": "Periodo: Septiembre - Diciembre 2026",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npx gh-pages -d ."  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/250953-cpu/Practicas_Aplicaciones_Web_250953.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/250953-cpu/Practicas_Aplicaciones_Web_250953/issues"
+  },
+  "homepage": "https://github.com/250953-cpu/Practicas_Aplicaciones_Web_250953#readme",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
