@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
     <header>
@@ -72,6 +76,24 @@
             <label for="horarioContacto">Favor de contactar en el horario establecido:</label>
             <input type="time" id="horarioContactoInicio" placeholder="09:00" required> a
             <input type="time" id="horarioContactoFin" placeholder="18:00" required> 
+            <br>
+
+            <h4>Redes Sociales</h4>
+
+            <input type="checkbox" id="socialesNetwork">
+            <label for="urlFacebook">Facebook:</label>
+            <input type="url" placeholder="http://www.facebook.com/UserName">
+            <br>
+
+            <input type="checkbox" id="socialesNetwork">
+            <label for="urlLinkedn">Linkedn:</label>
+            <input type="url" placeholder="http://www.linkdn.com/UserName">
+            <br>
+
+            <input type="checkbox" id="socialesNetwork">            
+            <label for="urlFacebook">WhatsApp: (Carga QR)</label>
+            <input type="file" id="whatsAppQR" accept="image/*">
+
 
             </fieldset>
 
@@ -142,8 +164,16 @@
 
             <fieldset>
                 <legend>Vizualización De Citas Por Mes:</legend>
-                <label for="mesCitas">Porfavor elige un mes:</label>
-                <input type="month" id="mesCitas">
+                <label for="mesCitas">Porfavor, elige el filtro:</label>
+
+                <input type="radio" value="Month" name="appoimentFilter" id="appoimentByMonth" checked>Mes
+
+                <input type="radio" value="Month" name="appoimentFilter" id="appoimentByWeek" >Semana
+                <br>
+
+                <input type="month">
+                <br>
+                <input type="week" disabled>
                 <button id="verCitas">Ver Citas</button>
 
                 <br>
@@ -252,6 +282,12 @@
                 
                 <label for="backgroundColor">Color de Fondo</label>
                 <input type="color" id="backgroundColor" value="#CCC">
+                <br>
+                
+                <label for="soundsVolume">Volumen de reproduccioón de sonidos</label>
+                <input type="range" id="soundsVolume" min="0" max="100" value="80">
+                <button id="muteSounds">Silencias Sonidos</button>
+
                 
             </fieldset>
 
@@ -282,8 +318,23 @@
         <label for="dateAppoiment"> Fecha de la cita: </label>
         <input type="datetime-local" id="dateAppoiment">
         <br>
+
+        <label for="locations">Elige la sucursal:</label>
+        <input list="locationsList" placeholder="Busca tu sucursal preferida...">
+
+        <datalist id="locationsList">
+            <option>Xicotepec, Centro</option>
+            <option>Xicotepec, El Tabacal</option>
+            <option>San Isidro, Tierra Negra</option>
+            <option>Necaxa, Canaditas</option>
+            <option>Huachinango, Petrolera 1</option>
+
+        </datalist>
+        <br>
+
         <label for="descriptionText">Descripcion de la cita:</label>
         <textarea id="descritionText"></textarea>
+        <br>
     </fieldset>
 
     <fieldset>
