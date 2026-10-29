@@ -293,3 +293,40 @@ input[type="week"]:disabled {
     opacity: 0.6;
     box-shadow: none !important;
 }
+/* ==========================================================================
+   6. VALIDACIÓN DE EDAD (Mensajes dinámicos)
+   ========================================================================== */
+#resultadoEdad {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px;
+    border-radius: 6px;
+    display: block;
+    color: var(--text-light-secondary);
+    border: 1px dashed var(--bg-button-base);
+    background-color: rgba(30, 41, 59, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Estado: Mayor de edad (Verde claro en fondo translúcido) */
+.edad-estado--mayor {
+    color: #4ade80 !important;
+    background-color: rgba(21, 128, 61, 0.2) !important;
+    border: 1px solid rgba(74, 222, 128, 0.4) !important;
+}
+
+/* Estado: Menor de edad (Texto rojo / rosa según la alerta del video) */
+.edad-estado--menor {
+    color: #f87171 !important;
+    background-color: rgba(185, 28, 28, 0.15) !important;
+    border: 1px solid rgba(248, 113, 113, 0.4) !important;
+}
+
+/* Estado: Error de fecha futura */
+.edad-estado--error {
+    color: #f87171 !important;
+    background-color: rgba(185, 28, 28, 0.2) !important;
+    border: 1px solid rgba(248, 113, 113, 0.4) !important;
+}
