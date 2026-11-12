@@ -1,12 +1,13 @@
 /* ==========================================================================
-   1. CONFIGURACIÓN GENERAL Y VARIABLES (Basado en tu paleta)
+   1. CONFIGURACIÓN GENERAL Y VARIABLES (Tu paleta oscura original)
+   Cambia aquí los colores globales si deseas modificar el tema de toda la página.
    ========================================================================== */
 :root {
-    --bg-body: #0f172a;
-    --bg-footer: #020617;
-    --bg-card-dark: #1e293b;
-    --bg-input: #293b55;
-    --bg-button-base: #334155;
+    --bg-body: #0f172a;               /* Fondo principal de toda la página */
+    --bg-footer: #020617;             /* Fondo muy oscuro (encabezados de tabla) */
+    --bg-card-dark: #1e293b;          /* Fondo de tarjetas y fieldsets */
+    --bg-input: #293b55;              /* Fondo de las cajas de texto */
+    --bg-button-base: #334155;        /* Color base de botones y bordes */
     
     /* Tonos Claros */
     --bg-light-clean: #f8fafc;
@@ -25,6 +26,8 @@
     --text-light-secondary: #cbd5e1;
     --text-dark-main: #111827;
     --text-dark-secondary: #222222;
+    --color-error: #f87171;           /* Rojo claro para errores sobre fondo oscuro */
+    --color-success: #4ade80;         /* Verde brillante para validaciones correctas */
 }
 
 * {
@@ -41,60 +44,337 @@ body {
     padding: 20px;
 }
 
+/* Utilidad para ocultar paneles o mensajes con el atributo HTML [hidden] */
+[hidden] {
+    display: none !important;
+}
+
+/* Alineación estándar de iconos de Google Material Symbols */
+.material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Asterisco rojo para marcar campos obligatorios */
+.req {
+    color: var(--color-error);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
 /* ==========================================================================
-   2. ESTRUCTURA DE CONTENEDORES (Header y Main)
+   2. ENCABEZADO SUPERIOR Y LOGO CENTRADO
+   Aquí puedes cambiar el tamaño o posición de tu imagen SGMT.png
    ========================================================================== */
-header {
-    background-color: rgba(15, 23, 42, 0.45);
+header.main-header {
+    background-color: rgba(30, 41, 59, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
+    max-width: 960px; /* Mismo ancho máximo que el contenedor main */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-header h1 {
+/* Contenedor que centra tu logo arriba de MecaGest */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Tamaño de la imagen del logo: modifica max-width si la quieres más grande o chica */
+.header-logo {
+    max-width: 110px;
+    height: auto;
+    border-radius: 12px;
+    filter: drop-shadow(0 4px 10px rgba(56, 189, 248, 0.25));
+}
+
+header.main-header h1 {
     color: var(--accent-celeste);
     font-size: 2.5rem;
     margin-bottom: 5px;
 }
 
-header h2 {
+header.main-header h2 {
     color: var(--text-light-secondary);
     font-size: 1.2rem;
     font-weight: 400;
 }
 
-header p {
+header.main-header p {
     color: #dbeafe;
     margin-top: 10px;
     font-size: 0.95rem;
 }
 
 main {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 10px;
 }
 
-h4 {
-    color: var(--accent-cyan);
-    margin: 20px 0 10px 0;
-    font-size: 1.1rem;
+/* ==========================================================================
+   3. ENCABEZADOS DE SECCIÓN NUMERADOS (01 Solicitud / 02 Módulos)
+   Sirve para dividir visualmente los dos bloques principales de la página
+   ========================================================================== */
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-/* Separador de avisos futuros en el flujo */
-main > br + br + h4 {
-    border-top: 2px dashed var(--bg-button-base);
+/* Línea separadora antes de la sección 02 */
+.section-divider-top {
+    margin-top: 45px;
     padding-top: 30px;
-    color: var(--accent-celeste);
+    border-top: 2px dashed var(--bg-button-base);
+}
+
+/* Cuadro con el número 01 y 02 */
+.section-index {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid var(--accent-celeste);
+    color: var(--accent-cyan);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.section-text {
+    flex: 1;
+    min-width: 240px;
+}
+
+.eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+}
+
+.section-heading h2 {
+    font-size: 1.5rem;
+    color: var(--text-light-main);
+}
+
+.section-desc {
+    font-size: 0.88rem;
+    color: var(--text-light-secondary);
+}
+
+.section-meta {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light-secondary);
+    background: var(--bg-card-dark);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
-   3. FORMULARIOS Y ELEMENTOS DE CONTROL (Fieldsets e Inputs)
+   4. TARJETA DEL WIZARD Y BARRA DE PASOS (STEPPER)
+   Aquí se controlan los círculos de los 4 pasos y la línea de progreso
    ========================================================================== */
+.wizard-card {
+    background-color: var(--bg-card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    scroll-margin-top: 20px;
+}
+
+.stepper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Línea gris de fondo que une los 4 círculos */
+.stepper-track {
+    position: absolute;
+    top: 22px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 3px;
+    transform: translateY(-50%);
+    background: var(--bg-button-base);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Línea celeste que avanza dinámicamente con JavaScript */
+.stepper-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent-blue-royal), var(--accent-cyan));
+    border-radius: 2px;
+    transition: width 0.35s ease;
+}
+
+.stepper-list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    list-style: none;
+}
+
+.stepper-item {
+    flex: 1;
+}
+
+.step-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: none !important; /* Evita que tome el fondo de los botones normales */
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    box-shadow: none !important;
+}
+
+.step-circle {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--bg-body);
+    border: 2px solid var(--bg-button-base);
+    color: var(--text-light-secondary);
+    transition: all 0.25s ease;
+}
+
+.step-num {
+    position: absolute;
+    right: -6px;
+    bottom: -4px;
+    padding: 1px 5px;
+    border-radius: 8px;
+    background: var(--bg-card-dark);
+    border: 1px solid var(--bg-button-base);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-light-secondary);
+}
+
+.step-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-light-secondary);
+    text-align: center;
+}
+
+/* Estado cuando un paso ya fue completado */
+.stepper-item.is-done .step-circle {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    background: rgba(103, 232, 249, 0.1);
+}
+
+/* Estado del paso actual activo */
+.stepper-item.is-active .step-circle {
+    background: var(--accent-blue-royal);
+    border-color: var(--accent-cyan);
+    color: var(--text-light-main);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.stepper-item.is-active .step-label {
+    color: var(--accent-cyan);
+    font-weight: 700;
+}
+
+/* Encabezado interno de cada paso */
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panel-head h3 {
+    font-size: 1.45rem;
+    color: var(--accent-celeste);
+    margin: 2px 0;
+}
+
+.panel-sub {
+    font-size: 0.88rem;
+    color: var(--text-light-secondary);
+}
+
+.panel-icon {
+    font-size: 30px;
+    color: var(--accent-cyan);
+    opacity: 0.7;
+}
+
+/* Banner de alertas superiores (Advertencia o Éxito) */
+.form-banner {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-banner.is-warning {
+    background: rgba(234, 179, 8, 0.18);
+    border: 1px solid rgba(250, 204, 21, 0.5);
+    color: #fde047;
+}
+
+.form-banner.is-success {
+    background: rgba(21, 128, 61, 0.25);
+    border: 1px solid rgba(74, 222, 128, 0.5);
+    color: var(--color-success);
+}
+
+/* ==========================================================================
+   5. FORMULARIOS, CUADRÍCULA E INPUTS CON ICONOS INTERNOS
+   Ajusta aquí la distribución de columnas o el relleno de los campos
+   ========================================================================== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas iguales */
+    column-gap: 24px;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field-wide {
+    grid-column: 1 / -1; /* Hace que el campo ocupe las 2 columnas completas */
+}
+
 fieldset {
     background-color: var(--bg-card-dark);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -113,13 +393,46 @@ legend {
     letter-spacing: 0.5px;
 }
 
-label {
-    display: inline-block;
-    margin-top: 12px;
+label, .group-title {
+    display: block;
+    margin-top: 8px;
     margin-bottom: 6px;
     color: var(--text-light-secondary);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
+}
+
+.group-title {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-top: 14px;
+}
+
+/* Contenedor que posiciona el icono dentro del input */
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap > .material-symbols-outlined {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #94a3b8;
+    pointer-events: none; /* Permite hacer clic a través del icono */
+    transition: color 0.2s ease;
+}
+
+/* Cambia el color del icono cuando el campo tiene el foco */
+.input-wrap:focus-within > .material-symbols-outlined {
+    color: var(--accent-celeste);
+}
+
+/* Padding izquierdo extra para que el texto no encime al icono */
+.input-wrap input,
+.input-wrap select {
+    padding-left: 40px !important;
 }
 
 /* Estilos comunes para campos de datos */
@@ -129,9 +442,12 @@ input[type="tel"],
 input[type="password"],
 input[type="url"],
 input[type="date"],
+input[type="datetime-local"],
 input[type="time"],
 input[type="month"],
+input[type="week"],
 input[type="number"],
+input:not([type]),
 select,
 textarea {
     width: 100%;
@@ -141,7 +457,7 @@ textarea {
     border-radius: 6px;
     color: var(--text-light-main);
     font-size: 0.95rem;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     transition: all 0.3s ease;
 }
 
@@ -149,35 +465,239 @@ input::placeholder {
     color: #94a3b8;
 }
 
-/* Enfoque de campos (Focus) */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--accent-celeste);
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
-/* Controles de fila específicos para los inputs de rango de tiempo */
-input[type="time"] {
-    display: inline-block;
-    width: auto;
-    margin: 5px;
+/* Campos deshabilitados (como las redes sociales sin marcar) */
+input:disabled, select:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-color: rgba(41, 59, 85, 0.4);
 }
 
-/* Textarea para descripciones */
+/* Textos de ayuda y errores debajo de los campos */
+.field-hint {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.field-error {
+    font-size: 0.8rem;
+    color: var(--color-error);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Resaltado en rojo cuando un campo falla la validación */
+.field.is-invalid .input-wrap input,
+.field.is-invalid .input-wrap select {
+    border-color: var(--color-error) !important;
+    box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.25);
+}
+
+.field.is-invalid .input-wrap > .material-symbols-outlined {
+    color: var(--color-error);
+}
+/* Grupo de lada internacional + número telefónico */
+.phone-group {
+    display: grid;
+    grid-template-columns: 165px minmax(0, 1fr);
+    gap: 8px;
+    align-items: start;
+}
+/* ==========================================================================
+   6. REGLAS DE CONTRASEÑA EN TIEMPO REAL (PASO 03)
+   ========================================================================== */
+.pass-rules {
+    list-style: none;
+    margin-top: 8px;
+    display: grid;
+    gap: 4px;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+
+.pass-rules li {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.pass-rules li::before {
+    content: "○";
+    display: inline-block;
+    width: 18px;
+}
+
+/* Cuando la regla se cumple, se pinta de verde y cambia a palomita ✓ */
+.pass-rules li.is-ok {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.pass-rules li.is-ok::before {
+    content: "✓";
+    font-weight: 700;
+}
+/* Botón del ojito dentro del input de contraseña */
+.input-wrap.has-toggle input {
+    padding-right: 42px !important;
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 4px 6px;
+    margin: 0;
+    color: #94a3b8;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.toggle-pass:hover {
+    color: var(--accent-celeste) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+/* ==========================================================================
+   7. REDES SOCIALES EN DOS COLUMNAS Y VISTA PREVIA DEL QR (PASO 02)
+   ========================================================================== */
+.social-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Izquierda inputs, derecha tarjeta QR */
+    gap: 24px;
+    align-items: start;
+    margin-top: 10px;
+}
+
+.social-row {
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 14px;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light-main);
+    cursor: pointer;
+}
+
+/* Tarjeta derecha para visualizar el código QR */
+.qr-card {
+    background-color: var(--bg-body);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.qr-card-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+    margin: 0 0 6px 0;
+}
+
+.qr-card-hint {
+    font-size: 0.78rem;
+    color: var(--text-light-secondary);
+    margin-bottom: 12px;
+}
+
+.qr-preview {
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--bg-card-dark);
+    border: 1px dashed var(--bg-button-base);
+}
+
+.qr-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.qr-empty .material-symbols-outlined {
+    font-size: 36px;
+    color: var(--accent-celeste);
+}
+
+.qr-preview img {
+    max-width: 100%;
+    max-height: 210px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #ffffff;
+    padding: 6px;
+}
+
+.qr-error {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-error);
+    text-align: center;
+}
+
+.qr-file {
+    margin: 10px 0 8px 0;
+    font-size: 0.78rem;
+    color: var(--text-light-secondary);
+    word-break: break-all;
+}
+
+/* ==========================================================================
+   8. CONTROLES EXTRA, TABLAS Y BOTONES
+   ========================================================================== */
 textarea {
     resize: vertical;
     min-height: 80px;
 }
 
-/* Checkboxes y Radios */
 input[type="checkbox"],
 input[type="radio"] {
     margin-right: 8px;
     cursor: pointer;
     accent-color: var(--accent-celeste);
+    width: 16px;
+    height: 16px;
 }
 
-/* Inputs de archivos */
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 input[type="file"] {
     background: transparent;
     border: none;
@@ -185,33 +705,31 @@ input[type="file"] {
     padding: 5px 0;
 }
 
-/* Foto de perfil (Borde blanco puro según requerimiento) */
 input[type="image"] {
     border: 2px solid var(--text-light-main);
     border-radius: 50%;
     padding: 4px;
     background-color: var(--bg-button-base);
     transition: transform 0.2s ease;
+    margin-top: 10px;
 }
+
 input[type="image"]:hover {
     transform: scale(1.05);
 }
 
-/* Slider de rango */
 input[type="range"] {
     width: 100%;
     accent-color: var(--accent-blue-royal);
     margin: 10px 0;
 }
 
-/* ==========================================================================
-   4. TABLAS (Visualización de datos)
-   ========================================================================== */
+/* Tablas */
 table {
     width: 100%;
-    border-collapse: collapse !important; /* Forzar colapso de bordes inline antiguos */
+    border-collapse: collapse !important;
     margin: 20px 0;
-    background-color: var(--bg-light-clean); /* Fondo claro limpio para alto contraste */
+    background-color: var(--bg-light-clean);
     color: var(--text-dark-main);
     border-radius: 8px;
     overflow: hidden;
@@ -221,11 +739,11 @@ table {
 th, td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #cbd5e1 !important; /* Reemplaza el inline black */
+    border: 1px solid #cbd5e1 !important;
 }
 
 th {
-    background-color: var(--bg-footer); /* Azul noche casi negro */
+    background-color: var(--bg-footer);
     color: var(--text-light-main);
     font-weight: 600;
     text-transform: uppercase;
@@ -233,72 +751,94 @@ th {
     letter-spacing: 0.5px;
 }
 
-/* Alternancia de filas usando tus clases lógicas */
 tr:nth-child(even) {
-    background-color: var(--bg-light-neutral); /* Gris neutro claro */
+    background-color: var(--bg-light-neutral);
 }
 
 tr:hover {
-    background-color: var(--bg-light-soft); /* Destacado celeste suave en hover */
+    background-color: var(--bg-light-soft);
 }
 
-/* ==========================================================================
-   5. BOTONES Y ACCIONES (Transiciones y Efectos Hover)
-   ========================================================================== */
+/* Barra de acciones del Wizard */
+.wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.actions-right {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botones generales */
 button,
 input[type="submit"],
 input[type="reset"] {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 0.92rem;
     font-weight: 600;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 8px 5px 8px 0;
-    display: inline-block;
-}
-
-/* Estado Base */
-button,
-input[type="reset"] {
     background-color: var(--bg-button-base);
     color: var(--text-light-main);
 }
 
-input[type="submit"] {
+.btn-primary {
     background: linear-gradient(135deg, var(--accent-blue-royal), var(--accent-purple));
     color: var(--text-light-main);
 }
 
-/* Estados Hover */
-button:hover,
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--accent-celeste);
+    color: var(--accent-celeste);
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+button:not(:disabled):hover,
 input[type="reset"]:hover {
     background-color: var(--accent-hover-vibrant);
-    color: var(--text-dark-main); /* Cambio de contraste para texto en fondo turquesa brillante */
+    color: var(--text-dark-main);
     box-shadow: 0 0 15px rgba(34, 238, 228, 0.4);
 }
 
-input[type="submit"]:not(:disabled):hover {
+.btn-primary:not(:disabled):hover {
+    background: linear-gradient(135deg, var(--accent-blue-royal), var(--accent-purple));
+    color: var(--text-light-main);
     filter: brightness(1.2);
-    box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
 }
 
-/* Botones Deshabilitados */
-input[type="submit"]:disabled,
+button:disabled,
 input[type="week"]:disabled {
     background: #475569 !important;
     color: #94a3b8 !important;
     cursor: not-allowed;
-    opacity: 0.6;
+    opacity: 0.5;
     box-shadow: none !important;
 }
+
 /* ==========================================================================
-   6. VALIDACIÓN DE EDAD (Mensajes dinámicos)
+   9. VALIDACIÓN DE EDAD (Mensajes dinámicos)
    ========================================================================== */
 #resultadoEdad {
-    margin-top: 10px;
-    margin-bottom: 12px;
+    margin-top: 8px;
     font-weight: 600;
     font-size: 0.95rem;
     padding: 12px;
@@ -306,27 +846,29 @@ input[type="week"]:disabled {
     display: block;
     color: var(--text-light-secondary);
     border: 1px dashed var(--bg-button-base);
-    background-color: rgba(30, 41, 59, 0.5);
+    background-color: rgba(15, 23, 42, 0.6);
     transition: all 0.3s ease;
 }
 
-/* Estado: Mayor de edad (Verde claro en fondo translúcido) */
 .edad-estado--mayor {
-    color: #4ade80 !important;
+    color: var(--color-success) !important;
     background-color: rgba(21, 128, 61, 0.2) !important;
     border: 1px solid rgba(74, 222, 128, 0.4) !important;
 }
 
-/* Estado: Menor de edad (Texto rojo / rosa según la alerta del video) */
-.edad-estado--menor {
-    color: #f87171 !important;
-    background-color: rgba(185, 28, 28, 0.15) !important;
+.edad-estado--menor,
+.edad-estado--error {
+    color: var(--color-error) !important;
+    background-color: rgba(185, 28, 28, 0.2) !important;
     border: 1px solid rgba(248, 113, 113, 0.4) !important;
 }
 
-/* Estado: Error de fecha futura */
-.edad-estado--error {
-    color: #f87171 !important;
-    background-color: rgba(185, 28, 28, 0.2) !important;
-    border: 1px solid rgba(248, 113, 113, 0.4) !important;
+/* ==========================================================================
+   10. RESPONSIVO PARA CELULARES Y TABLETS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .wizard-card { padding: 20px 16px; }
+    .form-grid, .social-layout { grid-template-columns: 1fr; }
+    .social-row { grid-template-columns: 1fr; gap: 4px; }
+    .step-label { font-size: 0.72rem; }
 }
