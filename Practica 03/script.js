@@ -1,51 +1,5 @@
 // ==========================================================================
-// CARRUSEL Y MODAL MULTIMEDIA: JAVASCRIPT BÁSICO, SIN LIBRERÍAS
-// ==========================================================================
-
-const tarjetas = [...document.querySelectorAll('.favorito-card')];
-const pista = document.getElementById('pista');
-const indicadores = document.getElementById('indicadores');
-let indice = 0;
-
-// --- CREAR PUNTOS DINÁMICOS DEL CARRUSEL ---
-if (indicadores) {
-    tarjetas.forEach((tarjeta, i) => {
-        const punto = document.createElement('button');
-        punto.type = 'button';
-        punto.setAttribute('aria-label', `Mostrar favorito ${i + 1}`);
-        punto.addEventListener('click', () => mostrar(i));
-        indicadores.appendChild(punto);
-    });
-}
-
-// --- FUNCIÓN PARA MOSTRAR LAS TARJETAS ---
-function mostrar(n) {
-    if (!pista || tarjetas.length === 0) return;
-    
-    indice = (n + tarjetas.length) % tarjetas.length;
-    pista.style.transform = `translateX(-${indice * 100}%)`;
-    
-    if (indicadores) {
-        [...indicadores.children].forEach((punto, i) => {
-            punto.classList.toggle('activo', i === indice);
-            punto.setAttribute('aria-current', i === indice ? 'true' : 'false');
-        });
-    }
-}
-
-// --- EVENTOS DE LAS FLECHAS DE NAVEGACIÓN ---
-const btnAnterior = document.getElementById('anterior');
-const btnSiguiente = document.getElementById('siguiente');
-
-if (btnAnterior) btnAnterior.addEventListener('click', () => mostrar(indice - 1));
-if (btnSiguiente) btnSiguiente.addEventListener('click', () => mostrar(indice + 1));
-
-// Iniciar carrusel en la primera posición
-mostrar(0);
-
-
-// ==========================================================================
-// LÓGICA DEL MODAL MULTIMEDIA
+// 3. LÓGICA DEL MODAL MULTIMEDIA Y AÑO DINÁMICO
 // ==========================================================================
 
 const modal = document.getElementById('modal-favoritos');
