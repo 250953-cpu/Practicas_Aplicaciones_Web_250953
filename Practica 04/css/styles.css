@@ -872,3 +872,170 @@ input[type="week"]:disabled {
     .social-row { grid-template-columns: 1fr; gap: 4px; }
     .step-label { font-size: 0.72rem; }
 }
+/* ==========================================================================
+   11. ESTILOS PARA LA SECCIÓN 02 (MÓDULOS DE PRÁCTICA)
+   ========================================================================== */
+.practice-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.practice-dashboard fieldset {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.practice-full {
+    grid-column: 1 / -1;
+}
+
+.practice-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.practice-controls-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+#requestTool, #verCitas {
+    margin-top: 34px;
+}
+
+.field-compact {
+    flex: 1;
+    min-width: 180px;
+}
+
+.radio-inline-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.radio-option {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    color: var(--text-light-main);
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 42px;
+    padding: 3px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--bg-button-base);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Badges de estatus en la tabla de citas */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.status-done { background: #dcfce7; color: #15803d; }
+.status-pending { background: #fef9c3; color: #a16207; }
+.status-cancel { background: #fee2e2; color: #b91c1c; }
+.status-rescheduled { background: #e0f2fe; color: #0369a1; }
+
+@media (max-width: 768px) {
+    .practice-dashboard { grid-template-columns: 1fr; }
+}
+/* ==========================================================================
+   12. BARRA DESPLEGABLE DE PERFIL E INTERFAZ
+   ========================================================================== */
+.topbar-tools {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    max-width: 960px;
+    margin: 0 auto 15px auto;
+    position: relative;
+    z-index: 50;
+}
+
+.dropdown-panel {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 340px;
+    max-width: 92vw;
+    background-color: var(--bg-card-dark);
+    border: 1px solid var(--accent-celeste);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
+    text-align: left;
+}
+
+.dropdown-panel h4 {
+    color: var(--accent-cyan);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.perfil-preview-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 12px 0;
+    padding: 10px;
+    background: var(--bg-body);
+    border-radius: 8px;
+    border: 1px dashed var(--bg-button-base);
+}
+
+.perfil-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-celeste);
+    background: var(--bg-card-dark);
+}
+/* ==========================================================================
+   13. ESTADOS DE ERROR EN INPUTS DIRECTOS (FECHAS, TEXTAREA Y ARCHIVOS)
+   ========================================================================== */
+.topbar-tools {
+    flex-wrap: wrap;
+}
+
+.field.is-invalid input[type="month"],
+.field.is-invalid input[type="week"],
+.field.is-invalid input[type="datetime-local"],
+.field.is-invalid textarea,
+.field.is-invalid input[type="file"] {
+    border-color: var(--color-error) !important;
+    box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.25);
+}
